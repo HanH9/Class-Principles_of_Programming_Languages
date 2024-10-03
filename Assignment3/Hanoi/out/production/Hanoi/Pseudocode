@@ -1,0 +1,41 @@
+For recursion process:
+// Use each move as the recursive function subject
+// Input: Current number of discs, source, destination, spare pole
+procedure moveDiscs(count: integer, source: int, destination: int, spare: int);
+    begin
+        if count > 0
+         then moveDiscs(count - 1, source, spare, destination)
+              print(source + "-->" + destination)
+              moveDiscs(count - 1, spare, destination, spare)
+    end
+
+For iteration process:
+// Create a class to record the information of Hanoi
+class HanoiState:
+    count, source, destination, spare: int
+
+// Use pop-stack and push-stack to complete iteration
+// Input: Current number of discs, source, destination, spare pole
+procedure iterateHanoi(source: int, destination: int, spare: int, count: int);
+    begin
+        var hanoi<-new HanoiState(count, source, destination, spare);
+        var stack<-new Stack<HanoiState>;
+        stack.push(hanoi);
+        var HanoiTemp: HanoiState;
+        var countTemp, sourceTemp, destinationTemp, spareTemp:int;
+        while stack.isEmpty()!=0
+            do
+                HanoiTemp<-stack.pop();
+                countTemp<-Hanoi.count;
+                sourceTemp<-Hanoi.source;
+                destinationTemp<-Hanoi.destination;
+                spareTemp<-Hanoi.spare;
+                if countTemp == 1
+                    then print(sourceTemp + "————>" + destinationTemp);
+                else
+                    then
+                    stack.push(new HanoiState(countTemp - 1, spareTemp, destinationTemp, sourceTemp));
+                    stack.push(new HanoiState(1, sourceTemp, destinationTemp, spareTemp));
+                    stack.push(new HanoiState(countTemp - 1, sourceTemp, spareTemp, destinationTemp));
+            end
+    end

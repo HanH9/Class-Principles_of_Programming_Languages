@@ -1,0 +1,20 @@
+(defun judgePrime(num)
+    "Determine whether the given integer number is prime"
+    (if(and(loop for i from 2 to (sqrt num) never (= 0 (mod num i)))(> num 2))
+        (format t "~%~d is prime!" num)
+        (format t "~%~d is not prime!" num)
+    )
+)
+
+(defun main()
+    "The main function"
+    (terpri)
+    (loop
+        (terpri)
+        (princ "Please give a number:")
+        (setq num(read))
+        (judgePrime num)
+    )
+)
+
+(main)

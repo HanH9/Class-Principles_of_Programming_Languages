@@ -1,0 +1,5 @@
+/*(sum+47)/total*/
+/*Hello world!*/
+/*while(i>0)*/
+//int a = 1
+A == b

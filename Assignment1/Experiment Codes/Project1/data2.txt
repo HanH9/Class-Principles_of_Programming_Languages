@@ -1,0 +1,6 @@
+George 19 3.55 freshmen
+Hank 18 3.66 freshmen
+Alan 20 3.86 Sophomore
+Aka 20 3.73 Sophomore
+James 21 3.33 Junior
+Jordan 19 3.68 freshmen
