@@ -1,0 +1,11 @@
+$handle = openf("test.txt");
+$binary = readb($handle, 32);
+closef($handle);
+
+$handle = openf("> $^ test2.txt");
+$hexadecimal = formatNumber($binary, 2, 16);
+writeb($handle,$hexadecimal);
+closef($handle);
+
+println("Binary: $binary");
+print("Hexadecimal: $hexadecimal");

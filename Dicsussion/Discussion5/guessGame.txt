@@ -1,0 +1,50 @@
+$n = 0;
+srand(ticks());
+# srand(): Set random seek
+# ticks(): Return the current time in milliseconds.
+while(true)
+{
+  println("Guess a number between 0 to 9");
+  println("You have 3 chance to guess");
+
+  $number = rand(9);
+  for($i = 3;$i > 0;$i--)
+  {
+    $flag = 0;
+    $guess = readln();
+    if ($guess == $number)
+    {
+      println("You got it!! You must be psychic");
+      $flag = 1;   # The player won
+      break;
+    }
+    else if ($guess < $number)
+    {
+       println("Too low... you lose!");
+    }
+    else if ($guess > $number)
+    {
+       println("Too high, you still lose");
+    }
+  }
+  
+  @array[$n] = $number;
+  $n = $n + 1;
+  if($flag == 0)
+  {
+    println("The computer won and thank you for playing!");
+  }
+  else
+  {
+    println("You won the game and thank you for playing!");
+  }
+  println("Do you want to play again?");
+  print("[y/n]: ");
+  $input = readln();
+  if($input eq "n")
+  {
+    break;
+  }
+}
+println("The answer for guessing the number is: ");
+println(@array);
